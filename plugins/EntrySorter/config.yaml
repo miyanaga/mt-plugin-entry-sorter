@@ -1,0 +1,17 @@
+id: EntrySorter
+name: Entry Sorter
+version: 0.1.0
+l10n_class: MT::EntrySorter::L10N
+
+settings:
+  interval_seconds:
+    Default: 3600
+
+blog_config_template: tmpl/blog_config_template.tmpl
+
+applications:
+    cms:
+        methods:
+            entry_sorter_update: $EntrySorter::MT::EntrySorter::CMS::method_update
+        callbacks:
+            template_param.list_common: $EntrySorter::MT::EntrySorter::CMS::cb_template_param_list_common
